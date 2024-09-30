@@ -1,0 +1,42 @@
+/* تنسيق الصناديق */
+.box {
+    background-color: var(--box-bg-color);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px var(--box-shadow-color);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box a {
+    text-decoration: none;
+    color: var(--box-text-color);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.box:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    background-color: #eaeaea; /* لون الخلفية عند التمرير */
+}
+
+/* زر الجلسات */
+.box-button {
+    background-color: white; /* لون الخلفية الأصلي */
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #003366; /* لون النص الأصلي */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #005499; /* إطار ملون */
+}
+
+.box-button:hover {
+    background-color: #005499; /* لون الخلفية عند التمرير */
+    color: white; /* لون النص عند التمرير */
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأستاذ أسعد صالح</title>
+    <style>
+        /* المتغيرات العامة للألوان */
+        :root {
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --nav-bg-color: #003366;
+            --nav-text-color: white;
+            --box-bg-color: white;
+            --box-text-color: #003366;
+            --box-shadow-color: rgba(0, 0, 0, 0.1);
+            --footer-bg-color: #003366;
+            --footer-text-color: white;
+        }
+
+        /* الوضع الليلي */
+        [data-theme="dark"] {
+            --background-color: #1e1e1e;
+            --text-color: #f4f4f4;
+            --nav-bg-color: #121212;
+            --nav-text-color: #f4f4f4;
+            --box-bg-color: #2c2c2c;
+            --box-text-color: #f4f4f4;
+            --box-shadow-color: rgba(255, 255, 255, 0.1);
+            --footer-bg-color: #121212;
+            --footer-text-color: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            direction: rtl;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* شريط التنقل */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--nav-bg-color);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a {
+            color: var(--nav-text-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #005499;
+            border-radius: 5px;
+        }
+
+        nav span {
+            color: var(--nav-text-color);
+            font-size: 18px;
+        }
+
+        /* زر تبديل الوضع */
+        .toggle-button {
+            background-color: var(--nav-text-color);
+            color: var(--nav-bg-color);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            width: 85%;
+            margin: 20px auto;
+            flex-grow: 1;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--box-text-color);
+            margin-bottom: 30px;
+        }
+
+        /* تنسيق الصناديق */
+        .box {
+            background-color: var(--box-bg-color);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px var(--box-shadow-color);
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .box a {
+            text-decoration: none;
+            color: var(--box-text-color);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .box:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            background-color: #eaeaea; /* لون الخلفية عند التمرير */
+        }
+
+        /* زر الجلسات */
+        .box-button {
+            background-color: white; /* لون الخلفية الأصلي */
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #003366; /* لون النص الأصلي */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 1px solid #005499; /* إطار ملون */
+        }
+
+        .box-button:hover {
+            background-color: #005499; /* لون الخلفية عند التمرير */
+            color: white; /* لون النص عند التمرير */
+        }
+
+        /* تذييل الصفحة */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: var(--footer-bg-color);
+            color: var(--footer-text-color);
+            font-size: 14px;
+            margin-top: auto;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <nav>
+        <a href="#recorded-sessions">الجلسات المسجلة</a>
+        <a href="#important-sheets" target="_blank">الأوراق المهمة</a>
+        <span>As3d</span>
+        <button class="toggle-button" onclick="toggleTheme()">تبديل الوضع</button>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container">
+        <!-- قسم الجلسات المسجلة -->
+        <div class="section" id="recorded-sessions">
+            <h2>الجلسات المسجلة</h2>
+            <div class="box">
+                <a href="">الجلسة 1: مراجعة الجبر</a>
+                <a href="" class="box-button">عرض</a>
+            </div>
+            <div class="box">
+                <a href="session2.html">الجلسة 2: مراجعة الهندسة</a>
+                <a href="session2.html" class="box-button">عرض</a>
+            </div>
+        </div>
+
+        <!-- قسم الأوراق المهمة -->
+        <div class="section" id="important-sheets">
+            <h2>الأوراق المهمة</h2>
+            <div class="box">
+                <a href="sheet1.pdf">ورقة الجبر</a>
+                <a href="sheet1.pdf" class="box-button">عرض</a>
+            </div>
+            <div class="box">
+                <a href="sheet2.pdf">ورقة الهندسة</a>
+                <a href="sheet2.pdf" class="box-button">عرض</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        © 2024 الأستاذ أسعد صالح. جميع الحقوق محفوظة.
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+        }
+    </script>
+
+</body>
+</html>
